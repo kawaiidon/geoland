@@ -1,0 +1,110 @@
+.main-menu{
+	&__list{
+		text-align: center;
+	}
+	&__link{
+		padding: 5px;
+	}
+}
+.product{
+	&__slide{
+		&-wrapper{
+			text-align: center;
+			padding: 0;
+		}
+		&-logo{
+			padding: 0;
+			margin: 0 auto;
+		}
+		&-discr{
+			width: 85%;
+			margin: 0 auto;
+		}
+	}
+}
+.technology{
+	&__slide{
+		&-discr{
+			text-align: center;
+			padding: 0;
+			margin: 0 auto;
+			width: 85%;
+		}
+	}
+}
+.region{
+	&__slide{
+		&-wrapper{
+			float: none;
+			padding: 0;
+			margin: 0;
+		}
+		&-discr{
+			margin: 0 auto;
+			text-align: center;
+			width: 85%;
+			&_big{
+				margin: 0 auto;
+				padding-bottom: 50px;
+				width: 85%;
+				text-align: center;
+			}
+		}
+	}
+}
+.sights{
+	height: 2280px;
+	.slides{
+		height: inherit;
+	}
+	&__slide{
+		&-title{
+			font-size: 40px;
+		}
+	}			
+	&__list{
+		&-item{
+			margin: 0 auto;
+			padding-top: 50px;
+			float: none;
+		}
+	}
+}
+.culture{
+	&__slide{
+		&-discr{
+			&_big{
+				padding: 0;
+				margin: 0 auto;
+				text-align: center;
+			}
+			padding: 0;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+}
+.cuisine{
+	height: 1640px;
+	&__discr{
+		width: 85%;
+	}
+}
+.recipe{
+	&__item{
+		margin: 0 auto;
+		padding-bottom: 50px;
+		float: none;
+		&-title{
+			padding-top: 10px;
+		}
+	}
+}
+
+.copyright{
+	display: block;
+	padding-left: 0;
+	margin: 0 auto;
+	width: 250px;
+}
+

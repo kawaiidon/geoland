@@ -1,0 +1,513 @@
+/* html {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNovaRegular.eot");
+  src: url("../fonts/ProximaNovaRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNovaRegular.woff") format("woff"), url("../fonts/ProximaNovaRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "ProximaNovaBold"; */
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNovaBold.eot");
+  src: url("../fonts/ProximaNovaBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNovaBold.woff") format("woff"), url("../fonts/ProximaNovaBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+  .slider-nav {
+    position: absolute;
+    bottom: 40px;
+    width: 58px; }
+    .slider-nav__item {
+      width: 16px;
+      height: 16px;
+      float: left;
+      clear: none;
+      display: block;
+      margin: 0 5px;
+      background: url(../images/slider_nav.png) no-repeat; }
+      .slider-nav__item:hover {
+        background: url(../images/slider_nav.png) no-repeat 100%; }
+      .slider-nav__item--current {
+        background: url(../images/slider_nav.png) no-repeat 100%; }
+
+.slides {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  /* Simple clear fix */
+  overflow: hidden;
+  /**	
+	 * Prevent blinking issue
+	 * Not tested. Experimental.
+	 */
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  /**
+		 * Here is CSS transitions 
+		 * responsible for slider animation in modern broswers
+		 */
+  -webkit-transition: all 1000ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1000ms cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.slide {
+  height: 100%;
+  float: left;
+  clear: none;
+  list-style-type: none; }
+
+.slider-arrow {
+  position: absolute;
+  display: block;
+  margin-bottom: -20px;
+  padding: 20px; }
+  .slider-arrow--right {
+    bottom: 50%;
+    right: 30px; }
+  .slider-arrow--left {
+    bottom: 50%;
+    left: 30px; }
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  /* -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale; */ }
+
+ul {
+  padding: 0; }
+
+h2, h3 {
+  margin: 0; }
+
+.wrapper {
+  max-width: 100%;
+  margin: 0 auto; }
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.header {
+  height: 805px; }
+  .header .slider-nav {
+    width: 60px !important; }
+    .header .slider-nav__item {
+      width: 18px;
+      height: 18px;
+      background: url(../images/slider_nav_white.png) no-repeat 100%; }
+      .header .slider-nav__item:hover {
+        background: url(../images/slider_nav_white.png) no-repeat; }
+      .header .slider-nav__item--current {
+        background: url(../images/slider_nav_white.png) no-repeat; }
+  .header-wrapper {
+    position: absolute;
+    top: 0;
+    height: 202px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.82); }
+  .header-logo {
+    margin: 0 auto;
+    margin-top: 37px;
+    background: url(../images/logo.png) no-repeat;
+    width: 185px;
+    height: 100px; }
+  .header__slider {
+    background: url(../images/header_slide.jpg) no-repeat 50% 100%/cover;
+    height: 805px; }
+
+.main-menu {
+  margin: 0 auto;
+  max-width: 830px; }
+  .main-menu__list {
+    padding-top: 5px; }
+  .main-menu__item {
+    list-style-type: none;
+    display: inline-block; }
+  .main-menu__link {
+    padding: 30px;
+    text-decoration: none;
+    font-family: ProximaNovaBold;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #534741;
+    letter-spacing: 0.5px; }
+
+.project {
+  margin: 0 auto;
+  height: 866px;
+  max-width: 800px; }
+  .project__wrapper {
+    padding-top: 100px; }
+  .project__logo {
+    margin: 0 auto;
+    margin-top: 7px;
+    background: url(../images/mountain_icon.png) no-repeat;
+    width: 152px;
+    height: 116px; }
+  .project__title {
+    font-family: ProximaNovaBold;
+    text-align: center;
+    color: #daaa5c;
+    font-size: 60px;
+    margin: 0 auto;
+    padding-top: 28px;
+    margin-left: -22px; }
+  .project__discr {
+    padding-top: 18px;
+    text-align: center;
+    font-family: ProximaNovaRegular;
+    font-weight: bolder;
+    font-size: 24px;
+    color: #666666; }
+    .project__discr-low {
+      font-family: ProximaNovaRegular;
+      font-size: 18px;
+      line-height: 1.34;
+      text-align: center;
+      padding-top: 27px;
+      color: #666666; }
+
+.product {
+  height: 894px;
+  background: #f2f2f2; }
+  .product__slide-title {
+    font-family: ProximaNovaBold;
+    text-align: center;
+    color: #daaa5c;
+    font-size: 60px;
+    margin: 0 auto;
+    padding-top: 51px;
+    margin-left: -20px; }
+  .product__slide-logo {
+    margin-left: -20px;
+    margin-top: 27px;
+    background: url(../images/mountain_icon_little.png) no-repeat;
+    width: 83px;
+    height: 64px; }
+  .product__slide-name {
+    padding-top: 20px;
+    font-family: ProximaNovaRegular;
+    font-size: 24px; }
+  .product__slide-discr {
+    font-family: ProximaNovaRegular;
+    font-size: 18px;
+    padding-top: 5px;
+    max-width: 522px;
+    line-height: 1.35;
+    letter-spacing: -0.2px; }
+  .product__slide-wrapper {
+    padding-left: 190px; }
+  .product__slide-1 {
+    height: 824px;
+    background: url(../images/product_bg_2.png) no-repeat 100%; }
+  .product__slide-2 {
+    background: url(../images/product_bg_1.png) no-repeat 100%; }
+
+.technology {
+  height: 998px; }
+  .technology__slide-title {
+    font-family: ProximaNovaBold;
+    text-align: center;
+    color: #daaa5c;
+    font-size: 60px;
+    margin: 0 auto;
+    padding-top: 39px;
+    max-width: 820px;
+    letter-spacing: 1.2px; }
+  .technology__slide-discr {
+    font-family: ProximaNovaRegular;
+    font-size: 18px;
+    margin-bottom: -14px;
+    padding-left: 176px;
+    padding-top: 18px;
+    max-width: 825px;
+    line-height: 1.35; }
+  .technology__items {
+    padding-top: 60px;
+    padding-left: 64px;
+    max-width: 670px;
+    margin: 0 auto; }
+  .technology__item {
+    margin-right: 80px;
+    float: left;
+    width: 250px;
+    text-align: center; }
+    .technology__item-name {
+      display: block;
+      padding-top: 40px;
+      font-family: ProximaNovaBold;
+      color: #282828;
+      font-size: 18px; }
+
+.region .slider-nav {
+  width: 60px !important; }
+  .region .slider-nav__item {
+    width: 18px;
+    height: 18px;
+    background: url(../images/slider_nav_white.png) no-repeat 100%; }
+    .region .slider-nav__item:hover {
+      background: url(../images/slider_nav_white.png) no-repeat; }
+    .region .slider-nav__item--current {
+      background: url(../images/slider_nav_white.png) no-repeat; }
+
+.region-title {
+  font-family: ProximaNovaBold;
+  text-align: center;
+  color: #daaa5c;
+  font-size: 60px;
+  margin: 0 auto;
+  margin-left: -18px;
+  padding-top: 57px;
+  color: white; }
+
+.region__slide-wrapper {
+  float: right;
+  margin-right: 64px;
+  padding-top: 12px;
+  line-height: 1.34;
+  letter-spacing: 0.4px; }
+
+.region__slide-discr {
+  font-family: ProximaNovaRegular;
+  font-size: 18px;
+  color: white;
+  max-width: 535px; }
+
+.region__slide-1 {
+  height: 935px;
+  background: url(../images/region_bg_1.jpg) no-repeat;
+  background-size: cover; }
+
+.region__slide-2 {
+  height: 935px;
+  background: #7eaa17 url(../images/region_bg_2.png) no-repeat 10% 50%; }
+
+.region__slide-discr {
+  font-family: ProximaNovaRegular;
+  font-size: 18px;
+  color: white;
+  max-width: 535px; }
+  .region__slide-discr_big {
+    font-size: 24px;
+    font-weight: bolder;
+    font-family: ProximaNovaRegular;
+    font-size: 18px;
+    color: white;
+    max-width: 535px; }
+
+.sights {
+  height: 1078px; }
+  .sights .slides {
+    height: 860px; }
+  .sights__slide-title {
+    font-family: ProximaNovaBold;
+    text-align: center;
+    color: #daaa5c;
+    font-size: 60px;
+    margin: 0 auto;
+    padding-top: 52px;
+    max-width: 700px; }
+  .sights__slide__discr {
+    font-family: ProximaNovaRegular;
+    font-size: 18px; }
+  .sights__list {
+    margin-left: 10px; }
+    .sights__list-item {
+      margin-top: 76px;
+      margin-right: 35px;
+      margin-bottom: -20px;
+      width: 360px;
+      float: left;
+      list-style-type: none; }
+    .sights__list-title {
+      display: block;
+      padding: 15px 0px 9px 50px;
+      margin-top: 21px;
+      margin-left: 50px;
+      text-decoration: none;
+      font-family: ProximaNovaBold;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #534741;
+      letter-spacing: 0.5px;
+      letter-spacing: 2px;
+      background: url(../images/title_bg.png) no-repeat; }
+
+.culture {
+  height: 772px; }
+  .culture .slider-nav {
+    width: 60px !important; }
+    .culture .slider-nav__item {
+      width: 18px;
+      height: 18px;
+      background: url(../images/slider_nav_white.png) no-repeat 100%; }
+      .culture .slider-nav__item:hover {
+        background: url(../images/slider_nav_white.png) no-repeat; }
+      .culture .slider-nav__item--current {
+        background: url(../images/slider_nav_white.png) no-repeat; }
+  .culture-title {
+    font-family: ProximaNovaBold;
+    text-align: center;
+    color: #daaa5c;
+    font-size: 60px;
+    margin: 0 auto;
+    padding-top: 68px;
+    letter-spacing: -2px; }
+  .culture__slide {
+    background: black url(../images/culture.png) no-repeat 100% 100%; }
+    .culture__slide-discr {
+      padding-top: 22px;
+      line-height: 1.35;
+      font-family: ProximaNovaRegular;
+      font-size: 18px;
+      color: white;
+      padding-left: 190px;
+      max-width: 535px; }
+      .culture__slide-discr_big {
+        display: block;
+        padding-top: 65px;
+        line-height: 1.25;
+        font-family: ProximaNovaRegular;
+        font-size: 18px;
+        color: white;
+        padding-left: 190px;
+        max-width: 535px;
+        font-size: 24px; }
+
+.cuisine {
+  height: 940px;
+  background: #daaa5c; }
+  .cuisine__title {
+    font-family: ProximaNovaBold;
+    text-align: center;
+    color: #daaa5c;
+    font-size: 60px;
+    margin: 0 auto;
+    padding-top: 42px;
+    letter-spacing: 1.3px;
+    color: white;
+    max-width: 550px; }
+  .cuisine__discr {
+    font-family: ProximaNovaRegular;
+    font-size: 18px;
+    margin: 0 auto;
+    padding-top: 42px;
+    line-height: 1.35;
+    color: white;
+    max-width: 825px;
+    text-align: center; }
+
+.recipe__title {
+  font-family: ProximaNovaBold;
+  text-align: center;
+  color: #daaa5c;
+  font-size: 60px;
+  margin: 0 auto;
+  padding-top: 36px;
+  color: white;
+  letter-spacing: -2px; }
+
+.recipe__list {
+  padding-top: 31px; }
+
+.recipe__item {
+  text-align: center;
+  list-style-type: none;
+  float: left;
+  width: 400px; }
+  .recipe__item-title {
+    text-decoration: none;
+    font-family: ProximaNovaBold;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #534741;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding-top: 35px;
+    padding-right: 18px;
+    width: 340px;
+    letter-spacing: 2px; }
+
+footer {
+  height: 235px;
+  background: url(../images/footer_bg.png) repeat-x; }
+
+.copyright {
+  display: block;
+  padding-top: 180px;
+  padding-left: 185px; }
+
+@media all and (max-width: 767px) {
+  .main-menu__list {
+    text-align: center; }
+  .main-menu__link {
+    padding: 5px; }
+  .product__slide-wrapper {
+    text-align: center;
+    padding: 0; }
+  .product__slide-logo {
+    padding: 0;
+    margin: 0 auto; }
+  .product__slide-discr {
+    width: 85%;
+    margin: 0 auto; }
+  .technology__slide-discr {
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+    width: 85%; }
+  .region__slide-wrapper {
+    float: none;
+    padding: 0;
+    margin: 0; }
+  .region__slide-discr {
+    margin: 0 auto;
+    text-align: center;
+    width: 85%; }
+    .region__slide-discr_big {
+      margin: 0 auto;
+      padding-bottom: 50px;
+      width: 85%;
+      text-align: center; }
+  .sights {
+    height: 2280px; }
+    .sights .slides {
+      height: inherit; }
+    .sights__slide-title {
+      font-size: 40px; }
+    .sights__list-item {
+      margin: 0 auto;
+      padding-top: 50px;
+      float: none; }
+  .culture__slide-discr {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center; }
+    .culture__slide-discr_big {
+      padding: 0;
+      margin: 0 auto;
+      text-align: center; }
+  .cuisine {
+    height: 1640px; }
+    .cuisine__discr {
+      width: 85%; }
+  .recipe__item {
+    margin: 0 auto;
+    padding-bottom: 50px;
+    float: none; }
+    .recipe__item-title {
+      padding-top: 10px; }
+  .copyright {
+    display: block;
+    padding-left: 0;
+    margin: 0 auto;
+    width: 250px; } }
